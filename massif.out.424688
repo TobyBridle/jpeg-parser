@@ -1,0 +1,335 @@
+desc: (none)
+cmd: jhead -c ./anime-umbrella-cyberpunk.jpg
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=260284
+mem_heap_B=80
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=281159
+mem_heap_B=552
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=281776
+mem_heap_B=4648
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=282122
+mem_heap_B=4684
+mem_heap_extra_B=52
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=282337
+mem_heap_B=4684
+mem_heap_extra_B=52
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4684 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4096 0x49DCF13: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 4096 0x49EC213: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x49EC213: _IO_doallocbuf (genops.c:342)
+    n1: 4096 0x49E9F44: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+     n1: 4096 0x49EC2C1: _IO_default_uflow (genops.c:362)
+      n1: 4096 0x10F76B: UnknownInlinedFun (jpgfile.c:123)
+       n1: 4096 0x10F76B: ReadJpegFile (jpgfile.c:385)
+        n1: 4096 0x11099C: ProcessFile (jhead.c:949)
+         n0: 4096 0x10B35B: main (jhead.c:1805)
+ n1: 472 0x49DDA68: __fopen_internal (iofopen.c:65)
+  n1: 472 0x10F756: ReadJpegFile (jpgfile.c:376)
+   n1: 472 0x11099C: ProcessFile (jhead.c:949)
+    n0: 472 0x10B35B: main (jhead.c:1805)
+ n1: 80 0x1110AA: UnknownInlinedFun (jpgfile.c:778)
+  n1: 80 0x1110AA: ProcessFile (jhead.c:861)
+   n0: 80 0x10B35B: main (jhead.c:1805)
+ n0: 36 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=282337
+mem_heap_B=4648
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=282503
+mem_heap_B=4685
+mem_heap_extra_B=51
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=282850
+mem_heap_B=4772
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=284795
+mem_heap_B=4859
+mem_heap_extra_B=85
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=286737
+mem_heap_B=4910
+mem_heap_extra_B=106
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=287491
+mem_heap_B=5111
+mem_heap_extra_B=121
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=289505
+mem_heap_B=5143
+mem_heap_extra_B=121
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=289673
+mem_heap_B=5194
+mem_heap_extra_B=158
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=290431
+mem_heap_B=5395
+mem_heap_extra_B=173
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=292447
+mem_heap_B=5443
+mem_heap_extra_B=173
+mem_stacks_B=0
+heap_tree=detailed
+n5: 5443 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4096 0x49DCF13: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 4096 0x49EC213: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x49EC213: _IO_doallocbuf (genops.c:342)
+    n1: 4096 0x49E9F44: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+     n1: 4096 0x49EC2C1: _IO_default_uflow (genops.c:362)
+      n1: 4096 0x10F76B: UnknownInlinedFun (jpgfile.c:123)
+       n1: 4096 0x10F76B: ReadJpegFile (jpgfile.c:385)
+        n1: 4096 0x11099C: ProcessFile (jhead.c:949)
+         n0: 4096 0x10B35B: main (jhead.c:1805)
+ n1: 715 0x10F8E5: UnknownInlinedFun (jpgfile.c:175)
+  n1: 715 0x10F8E5: ReadJpegFile (jpgfile.c:385)
+   n1: 715 0x11099C: ProcessFile (jhead.c:949)
+    n0: 715 0x10B35B: main (jhead.c:1805)
+ n1: 472 0x49DDA68: __fopen_internal (iofopen.c:65)
+  n1: 472 0x10F756: ReadJpegFile (jpgfile.c:376)
+   n1: 472 0x11099C: ProcessFile (jhead.c:949)
+    n0: 472 0x10B35B: main (jhead.c:1805)
+ n1: 160 0x10D074: CheckSectionsAllocated (jpgfile.c:107)
+  n1: 160 0x10F802: UnknownInlinedFun (jpgfile.c:139)
+   n1: 160 0x10F802: ReadJpegFile (jpgfile.c:385)
+    n1: 160 0x11099C: ProcessFile (jhead.c:949)
+     n0: 160 0x10B35B: main (jhead.c:1805)
+ n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=292615
+mem_heap_B=5475
+mem_heap_extra_B=181
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=293017
+mem_heap_B=5475
+mem_heap_extra_B=181
+mem_stacks_B=0
+heap_tree=peak
+n5: 5475 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4096 0x49DCF13: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 4096 0x49EC213: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x49EC213: _IO_doallocbuf (genops.c:342)
+    n1: 4096 0x49E9F44: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+     n1: 4096 0x49EC2C1: _IO_default_uflow (genops.c:362)
+      n1: 4096 0x10F76B: UnknownInlinedFun (jpgfile.c:123)
+       n1: 4096 0x10F76B: ReadJpegFile (jpgfile.c:385)
+        n1: 4096 0x11099C: ProcessFile (jhead.c:949)
+         n0: 4096 0x10B35B: main (jhead.c:1805)
+ n1: 747 0x10F8E5: UnknownInlinedFun (jpgfile.c:175)
+  n1: 747 0x10F8E5: ReadJpegFile (jpgfile.c:385)
+   n1: 747 0x11099C: ProcessFile (jhead.c:949)
+    n0: 747 0x10B35B: main (jhead.c:1805)
+ n1: 472 0x49DDA68: __fopen_internal (iofopen.c:65)
+  n1: 472 0x10F756: ReadJpegFile (jpgfile.c:376)
+   n1: 472 0x11099C: ProcessFile (jhead.c:949)
+    n0: 472 0x10B35B: main (jhead.c:1805)
+ n1: 160 0x10D074: CheckSectionsAllocated (jpgfile.c:107)
+  n1: 160 0x10F802: UnknownInlinedFun (jpgfile.c:139)
+   n1: 160 0x10F802: ReadJpegFile (jpgfile.c:385)
+    n1: 160 0x11099C: ProcessFile (jhead.c:949)
+     n0: 160 0x10B35B: main (jhead.c:1805)
+ n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=293017
+mem_heap_B=1379
+mem_heap_extra_B=173
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=293154
+mem_heap_B=907
+mem_heap_extra_B=157
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=293845
+mem_heap_B=1931
+mem_heap_extra_B=165
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=297394
+mem_heap_B=1894
+mem_heap_extra_B=146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=297425
+mem_heap_B=1807
+mem_heap_extra_B=129
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=297456
+mem_heap_B=1720
+mem_heap_extra_B=112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=297487
+mem_heap_B=1669
+mem_heap_extra_B=91
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=297518
+mem_heap_B=1468
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=297549
+mem_heap_B=1417
+mem_heap_extra_B=39
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=297580
+mem_heap_B=1216
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1216 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x49DCF13: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x49EC213: _IO_doallocbuf (genops.c:347)
+   n2: 1024 0x49EC213: _IO_doallocbuf (genops.c:342)
+    n1: 1024 0x49EA2E7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+     n1: 1024 0x49EADE7: _IO_new_file_xsputn (fileops.c:1244)
+      n1: 1024 0x49EADE7: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+       n1: 1024 0x49B8548: __printf_buffer_flush_to_file (printf_buffer_to_file.c:59)
+        n1: 1024 0x49B860B: __printf_buffer_to_file_done (printf_buffer_to_file.c:120)
+         n1: 1024 0x49C3E0B: __vfprintf_internal (vfprintf-internal.c:1545)
+          n1: 1024 0x4A8304C: __printf_chk (printf_chk.c:33)
+           n1: 1024 0x11220E: UnknownInlinedFun (stdio2.h:86)
+            n1: 1024 0x11220E: UnknownInlinedFun (exif.c:1596)
+             n1: 1024 0x11220E: ProcessFile (jhead.c:988)
+              n0: 1024 0x10B35B: main (jhead.c:1805)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 160 0x10D074: CheckSectionsAllocated (jpgfile.c:107)
+  n1: 160 0x10F802: UnknownInlinedFun (jpgfile.c:139)
+   n1: 160 0x10F802: ReadJpegFile (jpgfile.c:385)
+    n1: 160 0x11099C: ProcessFile (jhead.c:949)
+     n0: 160 0x10B35B: main (jhead.c:1805)
+ n1: 32 0x10F8E5: UnknownInlinedFun (jpgfile.c:175)
+  n1: 32 0x10F8E5: ReadJpegFile (jpgfile.c:385)
+   n1: 32 0x11099C: ProcessFile (jhead.c:949)
+    n0: 32 0x10B35B: main (jhead.c:1805)
+ n0: 0 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=28
+#-----------
+time=297611
+mem_heap_B=1184
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=321374
+mem_heap_B=160
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty

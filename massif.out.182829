@@ -1,0 +1,647 @@
+desc: (none)
+cmd: ./target/release/jpeg-parser ./anime-umbrella-cyberpunk.jpg
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=302548
+mem_heap_B=472
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=303070
+mem_heap_B=592
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=303467
+mem_heap_B=1736
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=406090
+mem_heap_B=1736
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1736 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4917F19: _IO_file_doallocate (in /usr/lib/libc.so.6)
+  n1: 1024 0x4926C88: _IO_doallocbuf (in /usr/lib/libc.so.6)
+   n1: 1024 0x4924A64: _IO_file_underflow (in /usr/lib/libc.so.6)
+    n1: 1024 0x491994F: getdelim (in /usr/lib/libc.so.6)
+     n1: 1024 0x492EBA4: pthread_getattr_np (in /usr/lib/libc.so.6)
+      n1: 1024 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n0: 1024 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 472 0x4918A0F: ??? (in /usr/lib/libc.so.6)
+  n1: 472 0x492EA73: pthread_getattr_np (in /usr/lib/libc.so.6)
+   n1: 472 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n0: 472 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 240 0x491978F: getdelim (in /usr/lib/libc.so.6)
+  n1: 240 0x492EBA4: pthread_getattr_np (in /usr/lib/libc.so.6)
+   n1: 240 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n0: 240 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=406426
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=406896
+mem_heap_B=5
+mem_heap_extra_B=19
+mem_stacks_B=0
+heap_tree=detailed
+n8: 5 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5 0x1ABFA4: <&str as alloc::ffi::c_str::CString::new::SpecNewImpl>::spec_new_impl (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 5 0x1889E8: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n0: 5 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 0 0x4917F19: _IO_file_doallocate (in /usr/lib/libc.so.6)
+  n1: 0 0x4926C88: _IO_doallocbuf (in /usr/lib/libc.so.6)
+   n1: 0 0x4924A64: _IO_file_underflow (in /usr/lib/libc.so.6)
+    n1: 0 0x491994F: getdelim (in /usr/lib/libc.so.6)
+     n1: 0 0x492EBA4: pthread_getattr_np (in /usr/lib/libc.so.6)
+      n1: 0 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n0: 0 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 0 0x4918A0F: ??? (in /usr/lib/libc.so.6)
+  n1: 0 0x492EA73: pthread_getattr_np (in /usr/lib/libc.so.6)
+   n1: 0 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n0: 0 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 0 0x491978F: getdelim (in /usr/lib/libc.so.6)
+  n1: 0 0x492EBA4: pthread_getattr_np (in /usr/lib/libc.so.6)
+   n1: 0 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n0: 0 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 0 0x49198BE: getdelim (in /usr/lib/libc.so.6)
+  n1: 0 0x492EBA4: pthread_getattr_np (in /usr/lib/libc.so.6)
+   n1: 0 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n0: 0 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 0 0x492AF53: ??? (in /usr/lib/libc.so.6)
+  n1: 0 0x492B26F: pthread_attr_setaffinity_np (in /usr/lib/libc.so.6)
+   n1: 0 0x492E9DD: pthread_getattr_np (in /usr/lib/libc.so.6)
+    n1: 0 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n0: 0 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 0 0x492B289: pthread_attr_setaffinity_np (in /usr/lib/libc.so.6)
+  n1: 0 0x492E9DD: pthread_getattr_np (in /usr/lib/libc.so.6)
+   n1: 0 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n0: 0 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 0 0x492E97A: pthread_getattr_np (in /usr/lib/libc.so.6)
+  n1: 0 0x18892D: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n0: 0 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+#-----------
+snapshot=7
+#-----------
+time=407214
+mem_heap_B=85
+mem_heap_extra_B=35
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=407566
+mem_heap_B=149
+mem_heap_extra_B=43
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=407956
+mem_heap_B=549
+mem_heap_extra_B=59
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=408387
+mem_heap_B=571
+mem_heap_extra_B=77
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=408881
+mem_heap_B=2779
+mem_heap_extra_B=85
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=409190
+mem_heap_B=2827
+mem_heap_extra_B=93
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=409650
+mem_heap_B=2933
+mem_heap_extra_B=115
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=410211
+mem_heap_B=2944
+mem_heap_extra_B=128
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=410561
+mem_heap_B=2954
+mem_heap_extra_B=142
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=411156
+mem_heap_B=3082
+mem_heap_extra_B=150
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=411932
+mem_heap_B=3112
+mem_heap_extra_B=160
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=412053
+mem_heap_B=3208
+mem_heap_extra_B=168
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=412543
+mem_heap_B=3272
+mem_heap_extra_B=176
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=412939
+mem_heap_B=3912
+mem_heap_extra_B=200
+mem_stacks_B=0
+heap_tree=detailed
+n6: 3912 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n6: 3168 0x129707: alloc::raw_vec::finish_grow (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 2208 0x12A079: alloc::raw_vec::RawVec<T,A>::reserve_for_push (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 2208 0x14506E: clap_builder::mkeymap::MKeyMap::push (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 2208 0x120B54: clap_builder::builder::command::Command::arg_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 2208 0x118F7A: <jpeg_parser::Args as clap_builder::derive::CommandFactory>::command (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 2208 0x1177BD: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 2208 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n1: 2208 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+         n1: 2208 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+          n0: 2208 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 448 0x129903: alloc::raw_vec::RawVec<T,A>::reserve_for_push (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 448 0x14615B: clap_builder::util::flat_map::Entry<K,V>::or_insert (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 448 0x1335BD: clap_builder::parser::arg_matcher::ArgMatcher::start_custom_arg (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 448 0x1602B8: clap_builder::parser::parser::Parser::start_custom_arg (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 448 0x15EA20: clap_builder::parser::parser::Parser::react (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 448 0x15E056: clap_builder::parser::parser::Parser::resolve_pending (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n1: 448 0x159F30: clap_builder::parser::parser::Parser::get_matches_with (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+         n1: 448 0x12136B: clap_builder::builder::command::Command::_do_parse (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+          n1: 448 0x119407: clap_builder::builder::command::Command::get_matches_from (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+           n1: 448 0x1177E2: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+            n1: 448 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+             n1: 448 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+              n1: 448 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+               n0: 448 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n3: 288 0x129B8F: alloc::raw_vec::RawVec<T,A>::reserve_for_push (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 96 0x146C35: clap_builder::parser::matches::matched_arg::MatchedArg::new_val_group (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 96 0x1602B8: clap_builder::parser::parser::Parser::start_custom_arg (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 96 0x15EA20: clap_builder::parser::parser::Parser::react (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 96 0x15E056: clap_builder::parser::parser::Parser::resolve_pending (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 96 0x159F30: clap_builder::parser::parser::Parser::get_matches_with (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n1: 96 0x12136B: clap_builder::builder::command::Command::_do_parse (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+         n1: 96 0x119407: clap_builder::builder::command::Command::get_matches_from (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+          n1: 96 0x1177E2: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+           n1: 96 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+            n1: 96 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+             n1: 96 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+              n0: 96 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 96 0x146C86: clap_builder::parser::matches::matched_arg::MatchedArg::new_val_group (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 96 0x1602B8: clap_builder::parser::parser::Parser::start_custom_arg (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 96 0x15EA20: clap_builder::parser::parser::Parser::react (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 96 0x15E056: clap_builder::parser::parser::Parser::resolve_pending (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 96 0x159F30: clap_builder::parser::parser::Parser::get_matches_with (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n1: 96 0x12136B: clap_builder::builder::command::Command::_do_parse (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+         n1: 96 0x119407: clap_builder::builder::command::Command::get_matches_from (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+          n1: 96 0x1177E2: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+           n1: 96 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+            n1: 96 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+             n1: 96 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+              n0: 96 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 96 0x158B27: clap_builder::parser::parser::Parser::get_matches_with (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 96 0x12136B: clap_builder::builder::command::Command::_do_parse (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 96 0x119407: clap_builder::builder::command::Command::get_matches_from (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 96 0x1177E2: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 96 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n1: 96 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+         n1: 96 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+          n0: 96 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 128 0x1134F0: alloc::raw_vec::RawVec<T,A>::reserve::do_reserve_and_handle (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 128 0x14581E: clap_builder::mkeymap::MKeyMap::_build (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 128 0x1253A6: clap_builder::builder::command::Command::_build_self (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 128 0x1212F7: clap_builder::builder::command::Command::_do_parse (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 128 0x119407: clap_builder::builder::command::Command::get_matches_from (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 128 0x1177E2: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n1: 128 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+         n1: 128 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+          n1: 128 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+           n0: 128 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 64 0x129C60: alloc::raw_vec::RawVec<T,A>::reserve_for_push (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 64 0x14612F: clap_builder::util::flat_map::Entry<K,V>::or_insert (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 64 0x1335BD: clap_builder::parser::arg_matcher::ArgMatcher::start_custom_arg (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 64 0x1602B8: clap_builder::parser::parser::Parser::start_custom_arg (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 64 0x15EA20: clap_builder::parser::parser::Parser::react (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 64 0x15E056: clap_builder::parser::parser::Parser::resolve_pending (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n1: 64 0x159F30: clap_builder::parser::parser::Parser::get_matches_with (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+         n1: 64 0x12136B: clap_builder::builder::command::Command::_do_parse (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+          n1: 64 0x119407: clap_builder::builder::command::Command::get_matches_from (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+           n1: 64 0x1177E2: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+            n1: 64 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+             n1: 64 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+              n1: 64 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+               n0: 64 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n0: 32 in 1 place, below massif's threshold (1.00%)
+ n2: 448 0x116267: alloc::raw_vec::finish_grow (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 384 0x1164CE: alloc::raw_vec::RawVec<T,A>::reserve_for_push (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 384 0x118B08: <jpeg_parser::Args as clap_builder::derive::CommandFactory>::command (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 384 0x1177BD: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 384 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 384 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 384 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n0: 384 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 64 0x1163F0: alloc::raw_vec::RawVec<T,A>::reserve_for_push (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 64 0x118A0E: <jpeg_parser::Args as clap_builder::derive::CommandFactory>::command (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 64 0x1177BD: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 64 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 64 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n1: 64 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+        n0: 64 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 96 0x11C96C: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 96 0x119159: clap_builder::builder::command::Command::get_matches_from (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 96 0x1177E2: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 96 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 96 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 96 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n0: 96 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n0: 94 in 13 places, all below massif's threshold (1.00%)
+ n1: 58 0x189601: std::env::args_os (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 58 0x1177C8: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 58 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 58 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 58 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n0: 58 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 48 0x188EE3: std::thread::Thread::new (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 48 0x188A0C: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n0: 48 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+#-----------
+snapshot=21
+#-----------
+time=413263
+mem_heap_B=4008
+mem_heap_extra_B=208
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=413535
+mem_heap_B=4140
+mem_heap_extra_B=244
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=413916
+mem_heap_B=4364
+mem_heap_extra_B=260
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=414439
+mem_heap_B=4562
+mem_heap_extra_B=294
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=414754
+mem_heap_B=4690
+mem_heap_extra_B=310
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=415022
+mem_heap_B=4794
+mem_heap_extra_B=318
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=415450
+mem_heap_B=4858
+mem_heap_extra_B=326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=415565
+mem_heap_B=4954
+mem_heap_extra_B=334
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=416462
+mem_heap_B=4962
+mem_heap_extra_B=350
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=416730
+mem_heap_B=4954
+mem_heap_extra_B=334
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=417435
+mem_heap_B=4890
+mem_heap_extra_B=326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=417752
+mem_heap_B=4566
+mem_heap_extra_B=290
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=417995
+mem_heap_B=4429
+mem_heap_extra_B=259
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=418475
+mem_heap_B=1597
+mem_heap_extra_B=187
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=418823
+mem_heap_B=1565
+mem_heap_extra_B=179
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=419175
+mem_heap_B=1207
+mem_heap_extra_B=129
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=419412
+mem_heap_B=983
+mem_heap_extra_B=105
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=419734
+mem_heap_B=145
+mem_heap_extra_B=55
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=420056
+mem_heap_B=115
+mem_heap_extra_B=45
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=420311
+mem_heap_B=853607
+mem_heap_extra_B=65
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=420719
+mem_heap_B=853621
+mem_heap_extra_B=75
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=421134
+mem_heap_B=853636
+mem_heap_extra_B=84
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=10680796
+mem_heap_B=853636
+mem_heap_extra_B=84
+mem_stacks_B=0
+heap_tree=peak
+n2: 853636 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 853492 0x1764F7: alloc::raw_vec::finish_grow (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 853492 0x189C0C: <std::fs::File as std::io::Read>::read_to_end (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 853492 0x117A4B: jpeg_parser::main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n1: 853492 0x11D9E2: std::sys_common::backtrace::__rust_begin_short_backtrace (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+     n1: 853492 0x11EC7C: std::rt::lang_start::{{closure}} (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+      n1: 853492 0x188A20: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+       n0: 853492 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n0: 144 in 23 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=44
+#-----------
+time=10680796
+mem_heap_B=853621
+mem_heap_extra_B=75
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=10681547
+mem_heap_B=854645
+mem_heap_extra_B=83
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=10682124
+mem_heap_B=854653
+mem_heap_extra_B=99
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=10682341
+mem_heap_B=854657
+mem_heap_extra_B=119
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=10683027
+mem_heap_B=854653
+mem_heap_extra_B=99
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=10683062
+mem_heap_B=854645
+mem_heap_extra_B=83
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=10684140
+mem_heap_B=1153
+mem_heap_extra_B=63
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=10684175
+mem_heap_B=1139
+mem_heap_extra_B=53
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=10684220
+mem_heap_B=1109
+mem_heap_extra_B=43
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=10684366
+mem_heap_B=85
+mem_heap_extra_B=35
+mem_stacks_B=0
+heap_tree=detailed
+n4: 85 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 48 0x188EE3: std::thread::Thread::new (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 48 0x188A0C: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n0: 48 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 32 0x48E0713: __cxa_thread_atexit_impl (in /usr/lib/libc.so.6)
+  n1: 32 0x18F8B0: std::sys_common::thread_info::set (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n1: 32 0x188A1A: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+    n0: 32 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n1: 5 0x1ABFA4: <&str as alloc::ffi::c_str::CString::new::SpecNewImpl>::spec_new_impl (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+  n1: 5 0x1889E8: std::rt::lang_start_internal (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+   n0: 5 0x119114: main (in /home/tobybridle/jpeg-parser/target/release/jpeg-parser)
+ n0: 0 in 24 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=10684633
+mem_heap_B=80
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=10684670
+mem_heap_B=32
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=10684700
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

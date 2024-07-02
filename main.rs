@@ -1,17 +1,11 @@
 use clap::{self, Parser};
 use std::{
-    any::Any,
     fs::File,
-    io::{self, BufRead, BufReader, Error, Read},
-    mem::transmute,
+    io::{self, BufReader, Error, Read},
     path::PathBuf,
     process::exit,
     str,
-    thread::sleep,
-    time::Duration,
 };
-use strum::IntoEnumIterator;
-use strum_macros::EnumIter;
 
 #[derive(Parser)]
 #[clap(author)]
@@ -19,33 +13,53 @@ struct Args {
     /// The JPEG file to parse
     #[clap(num_args = 1..)]
     file: Option<Vec<PathBuf>>,
+
+    /// Display verbose output (e.g specific marker types)
+    #[clap(short)]
+    verbose: bool,
 }
 
-#[derive(Debug)]
-struct MarkerTracking {
-    start: bool,
-    application_data: Vec<u8>,
-    start_frame: Vec<u8>,
-    end: bool,
+#[derive(Debug, Copy, Clone)]
+struct ImgProps {
+    width: usize,
+    height: usize,
+    bit_depth: usize,
+    components: usize,
 }
 
-impl MarkerTracking {
-    fn new() -> Self {
-        MarkerTracking {
-            start: false,
-            application_data: vec![],
-            start_frame: vec![],
-            end: false,
+#[derive(PartialEq, Eq, Debug)]
+enum JpegMarker {
+    /// Start of Image (0xD8)
+    START,
+
+    /// Indicative of a potential marker. E.g [0xFF, 0xC0] -> [JpegMarker::INDICATOR, JpegMarker::SOF(0xC0)]
+    INDICATOR,
+
+    /// Application data. Contains the type of byte (e.g 0xE0 or 0xE1)
+    APP(u8),
+
+    /// Start of Frame (0xC0 -> 0xC2). Contains the type of byte (e.g 0xC0)
+    SOF(u8),
+
+    /// End of Image (0xD9)
+    END,
+
+    /// Not a Marker, contains the byte
+    None(u8),
+}
+
+impl JpegMarker {
+    fn from_u8(marker: u8) -> JpegMarker {
+        match marker {
+            0xFF => JpegMarker::INDICATOR,
+            0xD8 => JpegMarker::START,
+            0xD9 => JpegMarker::END,
+            0xE0 | 0xE1 | 0xE2 => JpegMarker::APP(marker),
+            0xC0..=0xC2 => JpegMarker::SOF(marker),
+            _ => JpegMarker::None(marker),
         }
     }
 }
-
-const MARKER_INITIAL: u8 = 0xFF;
-const MARKER_START: u8 = 0xD8;
-const MARKER_APPLICATION_DATA_E0: u8 = 0xE0;
-const MARKER_APPLICATION_DATA_E1: u8 = 0xE1;
-const MARKER_START_OF_FRAME: u8 = 0xC0;
-const MARKER_END: u8 = 0xD9;
 
 fn main() -> io::Result<()> {
     let args = Args::parse();
@@ -59,102 +73,90 @@ fn main() -> io::Result<()> {
     }
 
     let filenames = args.file.unwrap();
-    for filename in filenames {
-        if let Ok(mut file) = File::open(filename.clone()) {
-            let mut tracking = MarkerTracking::new();
-            let mut buf = vec![];
-            let byte_count = file.read_to_end(&mut buf);
-            if byte_count.is_err() {
-                eprintln!("Could not read {:?}.", filename.clone());
-                exit(1);
-            }
-            let byte_count = byte_count.unwrap();
-            let mut skip_bytes = 0;
-            for idx in 0..byte_count {
-                if skip_bytes > 0 {
-                    skip_bytes -= 1;
-                    continue;
-                }
-                if buf[idx] == MARKER_INITIAL {
-                    match buf[(idx + 1).min(byte_count)] {
-                        MARKER_START => {
-                            tracking.start = true;
-                            skip_bytes += 1;
-                        }
-                        MARKER_APPLICATION_DATA_E0 | MARKER_APPLICATION_DATA_E1 => {
-                            // Get size of application data (in bytes)
-                            let size: usize = (buf[(idx + 2).min(byte_count)]
-                                + buf[(idx + 3).min(byte_count)]
-                                - 2)
-                            .into();
-                            // + 4 comes from the +2 of Markers and +2 of bytes signifying size
-                            tracking
-                                .application_data
-                                .extend(buf[idx + 4..(idx + 4 + size)].iter().cloned());
-                            skip_bytes += size + 2;
-                        }
-                        MARKER_START_OF_FRAME | 0xC1 | 0xC2 => {
-                            // if !tracking.start_frame.is_empty() {
-                            //     continue;
-                            // }
-                            // Get size of application data (in bytes)
-                            let size: usize = (buf[(idx + 2).min(byte_count)]
-                                + buf[(idx + 3).min(byte_count)]
-                                - 2)
-                            .into();
-                            // + 4 comes from the +2 of Markers and +2 of bytes signifying size
-                            tracking.start_frame = Vec::new();
-                            tracking
-                                .start_frame
-                                .extend(buf[idx + 4..(idx + 4 + size)].iter().cloned());
-                            skip_bytes += size + 2;
-                        }
-                        MARKER_END => {
-                            tracking.end = true;
-                            skip_bytes += 1;
-                        }
-                        _ => {}
-                    }
-                }
-            }
-            if !tracking.start {
-                eprintln!("Expected JPEG File input!");
-                exit(1);
-            }
-
-            let parsed_frame = parse_start_frame(tracking.start_frame);
-            print!(
-                "File ({}) ",
-                filename.file_name().unwrap().to_str().unwrap()
-            );
-            print!(
-                "{} ",
-                str::from_utf8(
-                    &tracking
-                        .application_data
-                        .take(4)
-                        .bytes()
-                        .map(|x| x.unwrap())
-                        .collect::<Vec<u8>>()
-                )
-                .unwrap()
-                .to_uppercase()
-            );
-            print!("{}x{}", parsed_frame.width, parsed_frame.height);
-            println!("")
-        } else {
-            println!("We did not manage to open the file!")
+    if args.verbose {
+        println!("Attempting to parse {} file(s).", filenames.len());
+    }
+    for filename in &filenames {
+        if let Err(e) = parse_jpeg(filename.to_str().unwrap_or(""), args.verbose) {
+            println!("Error: {}", Error::to_string(&e));
         }
+    }
+
+    if args.verbose {
+        println!("Successfully parsed {} file(s).", filenames.len());
     }
     Ok(())
 }
 
-#[derive(Debug)]
-struct ImgProps {
-    width: usize,
-    height: usize,
-    bit_depth: usize,
-    components: usize,
+fn parse_jpeg(filename: &str, verbose: bool) -> Result<(), io::Error> {
+    if verbose {
+        println!("Parsing file {}", filename);
+    }
+
+    let file = File::open(filename)?;
+    let mut breader = BufReader::new(file);
+    let mut buf = [0u8; 8192];
+    let mut is_first_read = true;
+
+    let mut sof_segments: Vec<(u8, ImgProps)> = Vec::new();
+    while let Ok(amnt) = breader.read(&mut buf) {
+        if amnt == 0 {
+            break;
+        } else if is_first_read && amnt > 1 {
+            if JpegMarker::from_u8(buf[1]) != JpegMarker::START {
+                return Err(Error::new(
+                    io::ErrorKind::InvalidData,
+                    filename.to_owned() + " is not a valid JPEG image!",
+                ));
+            }
+            is_first_read = false;
+        }
+
+        // Indice count
+        let buf_len = buf.len() - 1;
+        for idx in 0..buf_len {
+            let byte = JpegMarker::from_u8(buf[idx]);
+            // 0xFF 0x00 is byte stuffing.
+            if byte == JpegMarker::INDICATOR {
+                match JpegMarker::from_u8(buf[(idx + 1).min(buf_len)]) {
+                    JpegMarker::APP(b) => {
+                        let size: usize =
+                            (buf[(idx + 2).min(buf_len)] + buf[(idx + 3).min(buf_len)] - 2).into();
+
+                        if verbose {
+                            println!("APP Marker - 0x{:X}\nSize of APP Section (excluding initial 0xFF 0x{:X}): {} bytes", b, b, size)
+                        }
+                    }
+                    JpegMarker::SOF(b) => {
+                        let size: usize =
+                            (buf[(idx + 2).min(buf_len)] + buf[(idx + 3).min(buf_len)] - 2).into();
+
+                        let mut start_frame = Vec::new();
+                        start_frame.extend(buf[idx + 4..(idx + 4 + size)].iter().cloned());
+
+                        let parsed_frame = parse_start_frame(start_frame);
+                        sof_segments.push((b, parsed_frame.clone()));
+
+                        if verbose {
+                            println!("SOF Marker - 0x{:X}\nSize of SOF Section (excluding initial 0xFF 0x{:X}): {} bytes. Frame was {:?}", b, b, size, parsed_frame)
+                        }
+                    }
+                    _ => continue,
+                }
+            }
+        }
+    }
+
+    print!("File ({}) ", filename);
+    sof_segments.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
+    let parsed_frame = &sof_segments[0].1;
+    print!(
+        "{}x{} Bit Depth {}, Components {}",
+        parsed_frame.width, parsed_frame.height, parsed_frame.bit_depth, parsed_frame.components
+    );
+    println!("");
+
+    Ok(())
 }
 
 fn parse_start_frame(frame: Vec<u8>) -> ImgProps {

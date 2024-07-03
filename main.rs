@@ -148,8 +148,8 @@ fn parse_jpeg(filename: &str, verbose: bool) -> Result<(), io::Error> {
     }
 
     print!("File ({}) ", filename);
-    sof_segments.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
-    let parsed_frame = &sof_segments[0].1;
+    sof_segments.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
+    let parsed_frame = &sof_segments.last().unwrap().1;
     print!(
         "{}x{} Bit Depth {}, Components {}",
         parsed_frame.width, parsed_frame.height, parsed_frame.bit_depth, parsed_frame.components

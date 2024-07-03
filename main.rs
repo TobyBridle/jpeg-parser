@@ -99,6 +99,9 @@ fn parse_jpeg(filename: &str, verbose: bool) -> Result<(), io::Error> {
     let mut is_first_read = true;
 
     let mut sof_segments: Vec<(u8, ImgProps)> = Vec::new();
+    let mut skip_bytes = 0usize;
+    let mut ident: &str = "";
+
     while let Ok(amnt) = breader.read(&mut buf) {
         if amnt == 0 {
             break;
@@ -115,6 +118,11 @@ fn parse_jpeg(filename: &str, verbose: bool) -> Result<(), io::Error> {
         // Indice count
         let buf_len = buf.len() - 1;
         for idx in 0..buf_len {
+            if skip_bytes > 0 {
+                skip_bytes -= 1;
+                continue;
+            }
+
             let byte = JpegMarker::from_u8(buf[idx]);
             // 0xFF 0x00 is byte stuffing.
             if byte == JpegMarker::INDICATOR {
@@ -122,9 +130,21 @@ fn parse_jpeg(filename: &str, verbose: bool) -> Result<(), io::Error> {
                     JpegMarker::APP(b) => {
                         let size: usize =
                             (buf[(idx + 2).min(buf_len)] + buf[(idx + 3).min(buf_len)] - 2).into();
-
+                        ident = match b {
+                            0xE0 => "JFIF",
+                            0xE1 => "EXIF",
+                            _ => ident,
+                        };
                         if verbose {
-                            println!("APP Marker - 0x{:X}\nSize of APP Section (excluding initial 0xFF 0x{:X}): {} bytes", b, b, size)
+                            println!("APP Marker - 0x{:X}\nSize of APP Section (excluding initial 0xFF 0x{:X}): {} bytes", b, b, size);
+                            print!("NULL Terminated String: ");
+                            let mut idx = idx + 4;
+                            while buf[idx] != 0 {
+                                print!("{}", char::from_u32(buf[idx] as u32).unwrap());
+                                idx += 1;
+                                skip_bytes += 1;
+                            }
+                            println!("")
                         }
                     }
                     JpegMarker::SOF(b) => {
@@ -148,6 +168,7 @@ fn parse_jpeg(filename: &str, verbose: bool) -> Result<(), io::Error> {
     }
 
     print!("File ({}) ", filename);
+    print!("[{}] ", ident);
     sof_segments.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
     let parsed_frame = &sof_segments.last().unwrap().1;
     print!(
